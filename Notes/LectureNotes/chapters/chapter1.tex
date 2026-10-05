@@ -194,6 +194,7 @@ If  $ \alpha = (0, \ldots, 0) $, then we let
 	three properties: \index{Locally Euclidean space}
 	\begin{enumerate}
 		\citem{(a)} \label{it:1.4-(a)} $ \bigcup_{\alpha\in A}U_\alpha = M $.
+
 		\citem{(b)} \label{it:1.4-(b)}  $ \varphi_{\alpha} \circ \varphi_{\beta}^{-1} $ is
 		$ C^{k} $ for all  $ \alpha, \beta \in A $.
 		\citem{(c)} \label{it:1.4-(c)} The collection $\mathcal{F}$ is maximal with respect to \ref{it:1.4-(b)};
@@ -880,77 +881,90 @@ In this case, we usually take $df$ to mean the element of $M_{m}^{*}$ defined by
 	d f(v)=v(f).
 \end{equation}
 
-That is, we identify $df$ with $\delta f(\omega)$, where $\omega$ is the basis of the 1-dimensional space $\mathbb{R}_{r_{0}}^{*}$ dual to $(d/dr)|_{r_{0}}$. Particular usage will be clear from the context.
+That is, we identify $df$ with $\delta f(\omega)$, where $\omega$ is the basis
+of the 1-dimensional space $\mathbb{R}_{r_{0}}^{*}$ dual to $(d/dr)|_{r_{0}}$.
+Particular usage will be clear from the context.
 
 
 \warnernumber{23}
 \begin{remarks}{on 1.22}\label{thm:1.23}
+	\begin{enumerate}
+		\citem{(a)} Let $(U, x_{1}, \ldots, x_{d})$ and $(V, y_{1}, \ldots, y_{c})$
+		be coordinate systems about $m$ and $\psi(m)$
+		respectively. Then it follows from \eqref{eq:1.22:2}
+		and \hyperref[thm:1.20]{1.20(b)} that
+		\[
+			d\psi\left(\frac{\partial}{\partial x_{j}}\bigg|_{m}\right)=\sum_{i=1}^{c}\frac{\partial(y_{i}\circ\psi)}{\partial x_{j}}\bigg|_{m}\frac{\partial}{\partial y_{i}}\bigg|_{\psi(m)}.
+		\]
+		The matrix $\{\partial(y_{i}\circ\psi)/\partial x_{j}\}$ is called the
+		Jacobian of the map $\psi$ (with respect to the given coordinate system).
+		For maps between Euclidean spaces, the Jacobian will always be taken
+		with respect to the canonical coordinate systems. \index{Jacobian}
 
+		\citem{(b)} If $(U, x_1, \ldots, x_d)$ is a coordinate system on $M$,
+		and $m \in U$, then $\{(dx_i)_m\}$ is the basis of $M_m^*$ dual
+		to $\{(\partial/\partial x_i)|_m\}$. If $f: M \to \mathbb{R}$
+		is a $C^\infty$ function, then
+		\[
+			\begin{array}{r}{d f_{m}=\left.\sum_{i=1}^{d}\frac{\partial f}{\partial x_{i}}\right|_{m}d x_{i}|_{m}.}\end{array}
+		\]
+		\citem{(c)} Chain Rule. Let  $ \psi $:  $ M \to N $ and  $ \varphi $:  $ N \to X $
+		be  $ C^\infty $ maps. Then \index{Chain rule}
+		\[
+			d(\varphi\circ\psi)_{m}=d\varphi_{\psi(m)}\circ d\psi_{m},
+		\]
+		or simply $d(\varphi\circ\psi)=d\varphi\circ d\psi$. It is a useful
+		exercise to check the form that this equation takes when the maps are
+		expressed in terms of the matrices obtained by choosing coordinate systems.
 
-	(a) Let $(U, x_{1}, \ldots, x_{d})$ and $(V, y_{1}, \ldots, y_{c})$ be coordinate systems about $m$ and $\psi(m)$ respectively. Then it follows from \eqref{eq:1.22:2} and \hyperref[thm:1.20]{1.20(b)} that
+		\citem{(d)} If $\psi: M \to N$ and $f: N \to \mathbb{R}$ are $C^\infty$, then $\delta\psi(df_{\psi(m)}) = d(f \circ \psi)_m$,
+		for $\delta\psi(df_{\psi(m)})(v) = df(d\psi(v)) = d(f \circ \psi)_m(v)$ whenever $v \in M_m$.
 
-	\[
-		d\psi\left(\frac{\partial}{\partial x_{j}}\bigg|_{m}\right)=\sum_{i=1}^{c}\frac{\partial(y_{i}\circ\psi)}{\partial x_{j}}\bigg|_{m}\frac{\partial}{\partial y_{i}}\bigg|_{\psi(m)}.
-	\]
-
-	The matrix $\{\partial(y_{i}\circ\psi)/\partial x_{j}\}$ is called the Jacobian of the map $\psi$ (with respect to the given coordinate system). For maps between Euclidean spaces, the Jacobian will always be taken with respect to the canonical coordinate systems. \index{Jacobian}
-
-	(b) If $(U, x_1, \ldots, x_d)$ is a coordinate system on $M$, and $m \in U$, then $\{(dx_i)_m\}$ is the basis of $M_m^*$ dual to $\{(\partial/\partial x_i)|_m\}$. If $f: M \to \mathbb{R}$ is a $C^\infty$ function, then
-
-	\[
-		\begin{array}{r}{d f_{m}=\left.\sum_{i=1}^{d}\frac{\partial f}{\partial x_{i}}\right|_{m}d x_{i}|_{m}.}\end{array}
-	\]
-
-	(c) Chain Rule. Let  $ \psi $:  $ M \to N $ and  $ \varphi $:  $ N \to X $ be  $ C^\infty $ maps. Then \index{Chain rule}
-
-	\[
-		d(\varphi\circ\psi)_{m}=d\varphi_{\psi(m)}\circ d\psi_{m},
-	\]
-
-	or simply $d(\varphi\circ\psi)=d\varphi\circ d\psi$. It is a useful exercise to check the form that this equation takes when the maps are expressed in terms of the matrices obtained by choosing coordinate systems.
-
-	(d) If $\psi: M \to N$ and $f: N \to \mathbb{R}$ are $C^\infty$, then $\delta\psi(df_{\psi(m)}) = d(f \circ \psi)_m$, for $\delta\psi(df_{\psi(m)})(v) = df(d\psi(v)) = d(f \circ \psi)_m(v)$ whenever $v \in M_m$.
-
-	(e) A $C^{\infty}$ mapping $\sigma: (a,b)\to M$ is called a smooth curve in $M$. Let $t\in(a,b)$. Then the tangent vector to the curve $\sigma$ at $t$ is the vector \index{Curve}
-
-	\[
-		d\sigma\left(\frac{d}{d r}\bigg|_{t}\right)\in M_{\sigma(t)}.
-	\]
-	We shall denote the tangent vector to  $ \sigma $ at t by  $ \dot{\sigma}(t) $.
-
-	\begin{center}
-		\redrawn{figure-03}
-	\end{center}
-
-	Now, if $v$ is any element of $M_{m}$, then $v$ is the tangent vector to a smooth curve in $M$. For one can simply choose a coordinate system $(U,\varphi)$, centered at $m$, for which
-	\[
-		v=d\varphi\left(\frac{\partial}{\partial r_{1}}\bigg|_{0}\right).
-	\]
-	Then $v$ is the tangent vector at 0 to the curve $t \mapsto \varphi^{-1}(t, 0, \ldots, 0)$. One should observe that many curves can have the same tangent vector, and that two smooth curves $\sigma$ and $\tau$ in $M$ for which $\sigma(t_{0}) = \tau(t_{0}) = m$ have the same tangent vector at $t_{0}$ if and only if
-	\[
-		\frac{d(f\circ\sigma)}{d r}\Big|_{t_{0}}=\frac{d(f\circ\tau)}{d r}\Big|_{t_{0}}
-	\]
-	for all functions $f$ which are $C^{\infty}$ on a neighborhood of $m$.
-	If $\sigma$ happens to be a curve in the Euclidean space $\mathbb{R}^{n}$, then
-	\[
-		\dot{\sigma}(t)=\frac{d\sigma_{1}}{d r}\bigg|_{t}\frac{\partial}{\partial r_{1}}\bigg|_{\sigma(t)}+\cdots+\frac{d\sigma_{n}}{d r}\bigg|_{t}\frac{\partial}{\partial r_{n}}\bigg|_{\sigma(t)}.
-	\]
-	If we identify this tangent vector with the element
-	\[
-		\left(\frac{d\sigma_{1}}{d r}\bigg|_{t},\ldots,\frac{d\sigma_{n}}{d r}\bigg|_{t}\right)
-	\]
-	of $\mathbb{R}^{n}$, then we have
-	\[
-		\dot{\sigma}(t)=\lim_{h\to0}\frac{\sigma(t+h)-\sigma(t)}{h}.
-	\]
-	Thus with this identification our notion of tangent vector coincides, in this special case, with the geometric notion of a tangent to a curve in Euclidean space.
+		\citem{(e)} A $C^{\infty}$ mapping $\sigma: (a,b)\to M$ is called a smooth curve in $M$. Let $t\in(a,b)$. Then
+		the tangent vector to the curve $\sigma$ at $t$ is the vector \index{Curve}
+		\[
+			d\sigma\left(\frac{d}{d r}\bigg|_{t}\right)\in M_{\sigma(t)}.
+		\]
+		We shall denote the tangent vector to  $ \sigma $ at t by  $ \dot{\sigma}(t) $.
+		\begin{center}
+			\redrawn{figure-03}
+		\end{center}
+		Now, if $v$ is any element of $M_{m}$, then $v$ is the tangent vector to a smooth
+		curve in $M$. For one can simply choose a coordinate system $(U,\varphi)$,
+		centered at $m$, for which
+		\[
+			v=d\varphi\left(\frac{\partial}{\partial r_{1}}\bigg|_{0}\right).
+		\]
+		Then $v$ is the tangent vector at 0 to the curve $t \mapsto \varphi^{-1}(t, 0, \ldots, 0)$. One
+		should observe that many curves can have the same tangent vector, and
+		that two smooth curves $\sigma$ and $\tau$ in $M$ for which $\sigma(t_{0}) = \tau(t_{0}) = m$
+		have the same tangent vector at $t_{0}$ if and only if
+		\[
+			\frac{d(f\circ\sigma)}{d r}\Big|_{t_{0}}=\frac{d(f\circ\tau)}{d r}\Big|_{t_{0}}
+		\]
+		for all functions $f$ which are $C^{\infty}$ on a neighborhood of $m$.
+		If $\sigma$ happens to be a curve in the Euclidean space $\mathbb{R}^{n}$, then
+		\[
+			\dot{\sigma}(t)=\frac{d\sigma_{1}}{d r}\bigg|_{t}\frac{\partial}{\partial r_{1}}\bigg|_{\sigma(t)}+\cdots+\frac{d\sigma_{n}}{d r}\bigg|_{t}\frac{\partial}{\partial r_{n}}\bigg|_{\sigma(t)}.
+		\]
+		If we identify this tangent vector with the element
+		\[
+			\left(\frac{d\sigma_{1}}{d r}\bigg|_{t},\ldots,\frac{d\sigma_{n}}{d r}\bigg|_{t}\right)
+		\]
+		of $\mathbb{R}^{n}$, then we have
+		\[
+			\dot{\sigma}(t)=\lim_{h\to0}\frac{\sigma(t+h)-\sigma(t)}{h}.
+		\]
+		Thus with this identification our notion of tangent vector coincides,
+		in this special case, with the geometric notion of a tangent to a curve in Euclidean space.
+	\end{enumerate}
 
 \end{remarks}
 
 \warnernumber{24}
 \begin{theorem}\label{thm:1.24}
-	Let $\psi$ be a $C^\infty$ mapping of the connected manifold $M$ into the manifold $N$. Suppose that for each $m \in M$, $d\psi_m \equiv 0$. Then $\psi$ is a constant map.
-
+	Let $\psi$ be a $C^\infty$ mapping of the connected manifold $M$ into the manifold $N$. Suppose that for
+	each $m \in M$, $d\psi_m \equiv 0$. Then $\psi$ is a constant map.
 \end{theorem}
 
 \begin{proof}
