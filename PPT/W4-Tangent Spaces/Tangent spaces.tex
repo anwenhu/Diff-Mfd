@@ -4,7 +4,7 @@
 \usepackage{amsmath,amssymb}
 \usepackage{mathtools}
 \usepackage{xeCJK}
-\setCJKmainfont{Noto Serif CJK SC}
+\setCJKmainfont{Noto Serif SC}
 \usepackage{tikz-cd}
 
 % 1. 开启标题背景色填充
@@ -79,8 +79,8 @@
 	The addition, scalar multiplication and multiplication of functions
 	induce
 	\begin{align*}
-		\text{(addition)}   & \quad [f] + [g] = [f + g], \\
-		\text{(scalar mult.)} & \quad \lambda [f] = [\lambda f], \\
+		\text{(addition)}       & \quad [f] + [g] = [f + g],       \\
+		\text{(scalar mult.)}   & \quad \lambda [f] = [\lambda f], \\
 		\text{(multiplication)} & \quad [f] \cdot [g] = [fg].
 	\end{align*}
 	\begin{exercise}
@@ -192,17 +192,17 @@
 	\begin{enumerate}
 		\item \textbf{Linearity.}
 		      $v_\ell\bigl(\lambda[f] + \mu[g]\bigr)
-		      = \ell\bigl( \lambda[f] - \lambda[f(m)] + F_m^2 \bigr)
-		      + \ell\bigl( \mu[g] - \mu[g(m)] + F_m^2 \bigr)
-		      = \lambda\, v_\ell([f]) + \mu\, v_\ell([g])$.
+			      = \ell\bigl( \lambda[f] - \lambda[f(m)] + F_m^2 \bigr)
+			      + \ell\bigl( \mu[g] - \mu[g(m)] + F_m^2 \bigr)
+			      = \lambda\, v_\ell([f]) + \mu\, v_\ell([g])$.
 		\item \textbf{Leibniz.}
 		      $v_\ell\bigl([f][g]\bigr)
-		      = \ell\bigl( [f][g] - [f(m)][g(m)] + F_m^2 \bigr)$,
+			      = \ell\bigl( [f][g] - [f(m)][g(m)] + F_m^2 \bigr)$,
 		      where
 		      \begin{align*}
 			      [f][g] - [f(m)][g(m)]
-			      & = \underbrace{\bigl([f]-[f(m)]\bigr)\bigl([g]-[g(m)]\bigr)}_{\in\, F_m^2} \\
-			      & \quad + [f(m)]\bigl([g]-[g(m)]\bigr)
+			       & = \underbrace{\bigl([f]-[f(m)]\bigr)\bigl([g]-[g(m)]\bigr)}_{\in\, F_m^2} \\
+			       & \quad + [f(m)]\bigl([g]-[g(m)]\bigr)
 			      + \bigl([f]-[f(m)]\bigr)[g(m)],
 		      \end{align*}
 		      so $v_\ell([f][g]) = f(m)\, v_\ell([g]) + v_\ell([f])\, g(m)$.
@@ -272,8 +272,8 @@
 	So, interchanging the order of integration ($s \leftrightarrow t$),
 	\begin{align*}
 		g(q) & = g(p) + \sum_i
-		\left. \frac{\partial g}{\partial r_i} \right|_{p} (q_i - p_i) \\
-		& \quad + \sum_{i,j} (q_i - p_i)(q_j - p_j) \int_0^1 (1-t)
+		\left. \frac{\partial g}{\partial r_i} \right|_{p} (q_i - p_i)  \\
+		     & \quad + \sum_{i,j} (q_i - p_i)(q_j - p_j) \int_0^1 (1-t)
 		\left. \frac{\partial^2 g}{\partial r_j \partial r_i}
 		\right|_{p + t(q-p)} dt .
 		\qedhere
@@ -282,24 +282,24 @@
 
 \begin{frame}{Proof of the theorem: spanning set}
 	Let $(U, \varphi)$ be any coordinate system about $m \in M$, with
-	coordinate functions $(x_1, \dots, x_d)$, $d = \dim M$. Let
+	coordinate functions $(x_1, \dots, x_d)$, $\mathbf{x}(p) =(u_1,\cdots, u_d)$, $d = \dim M$. Let
 	$[f] \in \widetilde{\F}_m$. Applying $f \circ \varphi^{-1}$ to the
 	lemma:
 	\begin{multline*}
-		f \circ \varphi^{-1}(x) - f \circ \varphi^{-1}(x_0)
+		f \circ \varphi^{-1}(\mathbf{u}) - f \circ \varphi^{-1}(\mathbf{u}_0)
 		= \sum_{i=1}^{d}
-		\left. \frac{\partial (f \circ \varphi^{-1})}{\partial x_i}
-		\right|_{x_0} (x_i - x_i^0) \\
-		+ \sum_{i,j} (x_i - x_i^0)(x_j - x_j^0) \int_0^1 (1-t)
+		\left. \frac{\partial (f \circ \varphi^{-1})}{\partial u_i}
+		\right|_{\mathbf{u}_0} (u_i - u_i^0) \\
+		+ \sum_{i,j} (u_i - u_i^0)(u_j - u_j^0) \int_0^1 (1-t)
 		\left. \frac{\partial^2 (f \circ \varphi^{-1})}
-		{\partial x_j \partial x_i} \right|_{x_0 + t(x - x_0)} dt .
+		{\partial u_j \partial u_i} \right|_{\mathbf{u}_0 + t(\mathbf{u} - \mathbf{u}_0)} dt .
 	\end{multline*}
-	Since $x = \varphi(p)$, $x_0 = \varphi(m)$, composing with $\varphi$
+	Since $\mathbf{x}(p) := \varphi(p)=\mathbf{u}$, $x_0 = \varphi(m)$, composing with $\varphi$
 	gives, \emph{modulo} $F_m^2$,
 	\[
 		[f(p)] - [f(m)]
 		= \sum_{i=1}^{d}
-		\left. \frac{\partial (f \circ \varphi^{-1})}{\partial x_i}
+		\left. \frac{\partial (f \circ \varphi^{-1})}{\partial u_i}
 		\right|_{\varphi(m)} \bigl(x_i(p) - x_i(m)\bigr).
 	\]
 	Hence $\bigl\{ [x_i] - [x_i(m)] \bigr\}$ \emph{spans} $F_m / F_m^2$.
@@ -310,10 +310,10 @@
 	\[
 		\sum_i a_i \bigl(x_i - x_i(m)\bigr) \in F_m^2
 		\ \Longleftrightarrow\
-		\sum_i a_i \bigl(r_i - r_i(\varphi(m))\bigr) \in F_{\varphi(m)}^2 .
+		\sum_i a_i \bigl(u_i - u_i^0\bigr) \in F_{\varphi(m)}^2 .
 	\]
-	Then applying $\left. \dfrac{\partial}{\partial r_j}
-	\right|_{\varphi(m)}$ to both sides gives
+	Then applying $\left. \dfrac{\partial}{\partial u_j}
+		\right|_{\varphi(m)}$ to both sides gives
 	\[
 		a_j = 0 \qquad \forall\, j .
 	\]
@@ -322,6 +322,270 @@
 	\[
 		\dim\bigl(F_m / F_m^2\bigr) = d = \dim M . \qed
 	\]
+\end{frame}
+
+%====================================================================
+\section{The Usual View: Coordinate Basis}
+
+\begin{frame}{Tangent vectors acting on functions}
+	In practice, a tangent vector operates on \emph{functions} rather than
+	on their germs. Let $f$ be a differentiable function defined on a
+	neighborhood of $p \in M$. For $v \in T_p M$ (or $M_p$), we define
+	\[
+		v(f) \ \triangleq\ v([f]).
+	\]
+	So $v(f) = v(g)$ whenever $f$ and $g$ agree on a neighborhood of $p$.
+	\[
+		v(\lambda f + \mu g) = \lambda\, v(f) + \mu\, v(g)
+		\tag{a}
+	\]
+	\[
+		v(f \cdot g) = v(f)\, g(p) + f(p)\, v(g)
+		\tag{b}
+	\]
+\end{frame}
+
+\begin{frame}{Coordinate tangent vectors}
+	\begin{definition}[Coordinate tangent vectors]
+		Let $(U, \varphi)$ be a coordinate system with coordinate functions
+		$x_1, \dots, x_d$, and let $p \in U$. For $i = 1, \dots, d$ define
+		\[
+			\left. \frac{\partial}{\partial x_i} \right|_{p} (f)
+			\ \triangleq\
+			\left. \frac{\partial (f \circ \varphi^{-1})}{\partial r_i}
+			\right|_{\varphi(p)}
+		\]
+		for each $C^\infty$ function $f$ on a neighborhood of $p$. We also
+		use the notation
+		$\left. \frac{\partial f}{\partial x_i} \right|_{p}
+			= \left. \frac{\partial}{\partial x_i} \right|_{p} (f)$.
+	\end{definition}
+	\begin{block}{Remark (a)}
+		Clearly $\left. \frac{\partial}{\partial x_i} \right|_{p}(f)$
+		depends only on the germ of $f$ at $p$, and (a), (b) are satisfied.
+		So $\left. \frac{\partial}{\partial x_i} \right|_{p}$ is a tangent
+		vector at $p$.
+	\end{block}
+\end{frame}
+
+\begin{frame}{The coordinate basis}
+	Moreover
+	$\Bigl\{ \left. \frac{\partial}{\partial x_i} \right|_{p}
+		\Bigr\}_{i=1}^{d}$ is a basis of $T_p M$ --- indeed the basis
+	\emph{dual} to $\bigl\{ [x_i - x_i(p)] \bigr\}$ of $F_p / F_p^2$,
+	since
+	\[
+		\left. \frac{\partial}{\partial x_i} \right|_{p}
+		\bigl(x_j - x_j(p)\bigr) = \delta_{ij}.
+	\]
+	\begin{enumerate}
+		\item[(b)] If $w \in T_p M$, then
+		      \[
+			      w = \sum_{i=1}^{d} w(x_i)
+			      \left. \frac{\partial}{\partial x_i} \right|_{p},
+		      \]
+		      since both sides give the same result when acting on the
+		      functions $x_i - x_i(p)$.
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}{Change of coordinates}
+	\begin{enumerate}
+		\item[(c)] If $(U, \varphi)$ and $(V, \psi)$ are coordinate systems
+		      about $p$ with coordinate functions $(x_1, \dots, x_d)$ and
+		      $(y_1, \dots, y_d)$, then by (b)
+		      \[
+			      \left. \frac{\partial}{\partial y_j} \right|_{p}
+			      = \sum_{i=1}^{d} \left. \frac{\partial x_i}{\partial y_j}
+			      \right|_{p} \left. \frac{\partial}{\partial x_i} \right|_{p}.
+		      \]
+		      Note $\bigl( \frac{\partial}{\partial x_i} \bigr)$ depends on
+		      $\varphi$, not only on $x_i$; so $x_i = y_i$ does
+		      \emph{not} necessarily imply
+		      $\frac{\partial}{\partial x_i} = \frac{\partial}{\partial y_i}$.
+		\item[(d)] On the Euclidean space $\R^d$, the tangent vectors are
+		      all the linear combinations of $\frac{\partial}{\partial r_i}$.
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}{The $C^k$ caveat}
+	\begin{block}{Note}
+		The proof that $\dim (F_m / F_m^2) = \dim M$ fails in the $C^k$
+		case ($k < \infty$): the remainder term in the Taylor lemma is only
+		$C^{k-1}$, and $F_m / F_m^2$ is in fact always infinite-dimensional
+		in the $C^k$ case.
+	\end{block}
+	There are various ways to define tangent vectors in the $C^k$ case so
+	that $\dim T_p M = \dim M$. For example, one may define a tangent
+	vector at $p$ as a mapping assigning to each function ($C^k$ locally
+	about $p$) a real number such that, whenever $(U, \varphi)$ is a
+	coordinate system on a neighborhood of $p$, there exists a list of
+	numbers $(a_1, \dots, a_d)$ with
+	\[
+		v(f) = \sum_{i=1}^{d} a_i
+		\left. \frac{\partial (f \circ \varphi^{-1})}{\partial r_i}
+		\right|_{\varphi(p)} .
+	\]
+\end{frame}
+
+%====================================================================
+\section{The Differential}
+
+\begin{frame}{The differential of a map}
+	\begin{definition}[The differential]
+		Let $\Psi : M \to N$ be a $C^\infty$ map and $p \in M$. The
+		\emph{differential} (or tangent map) of $\Psi$ at $p$ is the linear
+		map
+		\[
+			\Psi_{*, p} : T_p M \longrightarrow T_{\Psi(p)} N
+		\]
+		defined as follows: for $w \in T_p M$ and a $C^\infty$ function
+		$f$ on a neighborhood of $\Psi(p)$,
+		\[
+			\Psi_{*, p}(w)(f) \ \triangleq\ w(f \circ \Psi)
+			= d\Psi_p(w)(f).
+		\]
+	\end{definition}
+	$\Psi$ is called \emph{non-singular} at $p$ if
+	$\ker (\Psi_{*, p}) = \{0\}$.
+	\medskip
+
+	The dual map
+	$\Psi_p^* : (T_{\Psi(p)} N)^* \longrightarrow (T_p M)^*$ is defined by
+	$\Psi_p^*(\omega)(w) = \omega(\Psi_*(w)) = \omega(d\Psi(w))$.
+\end{frame}
+
+\begin{frame}{Example: the differential of a function}
+	If $f : M \to \R$ is smooth, $w \in T_p M$ and $f(p) = r_0$, then
+	\[
+		df(w) = w(f) \left. \frac{d}{dr} \right|_{r_0}.
+	\]
+	\begin{proof}
+		If $w = \sum_i v_i \left. \frac{\partial}{\partial x_i} \right|_p$,
+		then $df(w) = \sum_i v_i\, df\bigl( \frac{\partial}{\partial x_i} \bigr)$.
+		For any $C^\infty$ function $g$ about $r_0$,
+		\[
+			df(w)(g) = w(g \circ f)
+			= \sum_i v_i \frac{\partial g}{\partial r}
+			\frac{\partial f}{\partial x_i}
+			= w(f)\, \frac{d}{dr}(g).
+			\qedhere
+		\]
+	\end{proof}
+	In this case $df \in (T_p M)^*$ is simply given by $df(w) \triangleq w(f)$.
+\end{frame}
+
+\begin{frame}{Jacobian matrix and dual basis}
+	\begin{enumerate}
+		\item[(a)] Let $(U, x_1, \dots, x_d)$ and $(V, y_1, \dots, y_d)$ be
+		      coordinate systems about $p$ and $\Psi(p)$. Then
+		      \[
+			      d\Psi\left( \left. \frac{\partial}{\partial x_j} \right|_{p} \right)
+			      = \sum_{i=1}^{d} \left. \frac{\partial (y_i \circ \Psi)}
+			      {\partial x_j} \right|_{p}
+			      \left. \frac{\partial}{\partial y_i} \right|_{\Psi(p)} .
+		      \]
+		      The matrix $\bigl( \left. \frac{\partial (y_i \circ \Psi)}
+			      {\partial x_j} \right|_{p} \bigr)$ is called the
+		      \emph{Jacobian} of $\Psi$.
+		\item[(b)] If $(U, x_1, \dots, x_d)$ is a coordinate system on $M$
+		      and $p \in U$, then $\bigl\{ (dx_i)_p \bigr\}$ is the basis of
+		      $(T_p M)^*$ dual to
+		      $\bigl\{ \left. \frac{\partial}{\partial x_i} \right|_{p} \bigr\}$.
+		      For $f : M \to \R$ smooth,
+		      \[
+			      df_p = \sum_{i=1}^{d} \left. \frac{\partial f}{\partial x_i}
+			      \right|_{p} (dx_i)_p .
+		      \]
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}{Chain rule and pullback}
+	\begin{enumerate}
+		\item[(c)] \textbf{Chain rule.} Let $\Psi : M \to N$ and
+		      $\Phi : N \to X$ be $C^\infty$ maps. Then
+		      \[
+			      d(\Phi \circ \Psi)_p
+			      = d\Phi\big|_{\Psi(p)} \circ\, d\Psi\big|_{p} .
+		      \]
+		\item[(d)] If $\Psi : M \to N$ and $f : N \to \R$ are $C^\infty$,
+		      then
+		      \[
+			      \Psi^*(df)_{\Psi(p)} = d(f \circ \Psi)_p,
+		      \]
+		      because for all $w \in T_p M$,
+		      \[
+			      \Psi^*(df)_{\Psi(p)}(w) = d(f \circ \Psi)\big|_{p}(w).
+		      \]
+	\end{enumerate}
+\end{frame}
+
+%====================================================================
+\section{Smooth Curves}
+
+\begin{frame}{Smooth curves}
+	\begin{definition}[Smooth curve]
+		A $C^\infty$ map $\sigma : (a, b) \to M$ is called a \emph{smooth
+			curve} in $M$. Its tangent vector at $t \in (a,b)$ is
+		\[
+			\dot{\sigma}(t) \ \triangleq\
+			d\sigma\left( \left. \frac{d}{dt} \right|_{t} \right)
+			= \sigma_*\left( \left. \frac{d}{dt} \right|_{t} \right)
+			\in M_{\sigma(t)},
+		\]
+		given in coordinates by
+		$\dot{\sigma}(t) = \sum_{i=1}^{d} \left. \frac{\partial x_i}{\partial t} \right|_{t} \left. \frac{\partial}{\partial x_i} \right|_{\sigma(t)}$.
+	\end{definition}
+	\begin{block}{Remark}
+		Every $w \in T_p M$ is the tangent vector to a smooth curve: choose
+		$(U, \varphi)$ centered at $p$ with
+		$w = d\varphi^{-1}\bigl( \left. \frac{\partial}{\partial r_1}
+			\right|_{0} \bigr)$; then $w$ is tangent at $0$ to
+		$t \mapsto \varphi^{-1}(t, 0, \dots, 0)$.
+	\end{block}
+\end{frame}
+
+\begin{frame}{Remarks on curves}
+	\begin{itemize}
+		\item Two curves $\sigma, \tau$ with $\sigma(t_0) = \tau(t_0) = p$
+		      have the same tangent vector at $t_0$ iff
+		      $\left. \frac{d(f \circ \sigma)}{dt} \right|_{t_0}
+			      = \left. \frac{d(f \circ \tau)}{dt} \right|_{t_0}$ for all
+		      $f$ which are $C^\infty$ about $p$.
+		\item In $\R^d$:\quad
+		      $\dot{\sigma}(t) = \sum_i \left. \frac{d\sigma_i}{dt}
+			      \right|_{t} \left. \frac{\partial}{\partial r_i}
+			      \right|_{\sigma(t)} \equiv (\dot{\sigma}_1, \dots,
+			      \dot{\sigma}_d)$.
+	\end{itemize}
+\end{frame}
+
+%====================================================================
+\section{An Application}
+
+\begin{frame}{A map with vanishing differential is constant}
+	\begin{theorem}
+		Let $\Psi$ be a $C^\infty$ mapping of the connected manifold $M$
+		into $N$. If $d\Psi|_p \equiv 0$ for all $p \in M$, then $\Psi$ is
+		a constant map.
+	\end{theorem}
+	\begin{proof}
+		Let $q \in \Psi(M)$. The set $\Psi^{-1}(\{q\})$ is closed; we show
+		it is open. Let $m \in \Psi^{-1}(\{q\})$, and choose coordinate
+		systems $(U, x_1, \dots, x_d)$, $(V, y_1, \dots, y_e)$ about $m$
+		and $q$ with $\Psi(U) \subset V$. Then for all $p \in U$,
+		\[
+			0 = d\Psi\left( \frac{\partial}{\partial x_j} \right)
+			= \sum_{i=1}^{e} \left. \frac{\partial (y_i \circ \Psi)}
+			{\partial x_j} \right|_{p}
+			\left. \frac{\partial}{\partial y_i} \right|_{\Psi(p)}
+			\ \Longrightarrow\
+			\left. \frac{\partial (y_i \circ \Psi)}{\partial x_j}
+			\right|_{p} = 0 \quad \forall\, i, j.
+		\]
+		So the $y_i \circ \Psi$ are constant on $U$, i.e.\ $\Psi(U) = \{q\}$,
+		and $\Psi^{-1}(\{q\})$ is open. \qedhere
+	\end{proof}
 \end{frame}
 
 \end{document}
