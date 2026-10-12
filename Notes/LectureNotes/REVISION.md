@@ -1,5 +1,29 @@
 # Revision of 16 September 2026
 
+## Germ notation update (12 October 2026)
+
+- Replaced bold function germs by `$[f]_m$`, abbreviated to `$[f]$` when
+  the base point is clear, in Chapter 1 and the function-sheaf example and
+  exercise in Chapter 5. Vector typography is unchanged.
+- Distinguished the scalar value `$f(m)$` from the constant-function
+  germ `$[f(m)]$`; retained braces for cosets in powers of the vanishing ideal.
+  Explained the coordinate tuple shorthand in 1.26 and regenerated the
+  notation index from `notation.json`.
+- While updating these formulas, corrected the coordinate index `1` to `i`
+  in 1.20(a), and the exponent `a` to `alpha` in 1.26(5), consistently with
+  the adjacent formulas. Used set braces for the collection in 1.26(5) and
+  the basic open set of germs in 5.2. These are editorial notation corrections;
+  the archival OCR markdown is unchanged.
+- Rebuilt both editions (235 plain / 252 colored PDF pages) and visually
+  reviewed the changed definitions, derivation, higher-order formulas, sheaf
+  example/exercise and notation index. Compilation has no overflow, undefined
+  references or font errors. The existing verifier reports 27 Chapter 1
+  equation-number mismatches: these equations already use automatic chapter
+  numbering while the verifier expects local tags. All Chapter 1 equation
+  labels and explicit tags are unchanged from the branch base. No other
+  verification errors were reported; this notation update does not resolve
+  the pre-existing numbering inconsistency.
+
 ## Changes
 
 - Provided two A4/11pt editions sharing the same corrected content. `main.pdf`
