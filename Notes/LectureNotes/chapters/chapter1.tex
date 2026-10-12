@@ -637,10 +637,10 @@ local nature of functions, we introduce the notion of germs of functions.
 	\emph{germs}, and we denote the set of germs at $m$ by $\widetilde{F}_m$.
 \end{definition}
 
-If $f$ is a $C^\infty$ function on a neighborhood of $m$, then $\mathbf{f}$ will denote its germ.
+If $f$ is a $C^\infty$ function on a neighborhood of $m$, then $[f]_m$ will denote its germ at $m$. When the base point is clear, we write $[f]$ for $[f]_m$.
 The operations of addition, scalar multiplication, and multiplication of
 functions induce on $\widetilde{F}_m$ the structure of an algebra over $\mathbb{R}$.
-A germ $f$ has a well-defined value $f(m)$ at $m$, namely, the value
+A germ $[f]$ has a well-defined value $[f](m)=f(m)$ at $m$, namely, the value
 at $m$ of any representative of the germ. Let $F_m \subset \widetilde{F}_m$
 be the set of germs which vanish at $m$. Then $F_m$ is an ideal in $\widetilde{F}_m$,
 and we let $F_m^k$ denote its $k$th power. $F_m^k$ is the ideal of $\widetilde{F}_m$
@@ -651,20 +651,20 @@ $\widetilde{F}_m \supset F_m \supset F_m^{2} \supset F_m^{3} \supset \cdots$.
 \warnernumber{14}
 \begin{definition}\label{thm:1.14}
 	A tangent vector  $ v $ at the point  $ m \in M $ is a linear derivation
-	of the algebra  $ \widetilde{F}_m $. That is, for all  $ \mathbf{f} $,
-	$ \mathbf{g} \in \widetilde{F}_m $ and  $ \lambda \in \mathbb{R} $, \index{Tangent vector}
+	of the algebra  $ \widetilde{F}_m $. That is, for all  $ [f] $,
+	$ [g] \in \widetilde{F}_m $ and  $ \lambda \in \mathbb{R} $, \index{Tangent vector}
 	\begin{enumerate}
-		\citem{(a)}$v(\mathbf{f}+\lambda\mathbf{g})=v(\mathbf{f})+\lambda v(\mathbf{g}).$
-		\citem{(b)} $v(\mathbf{f}\cdot\mathbf{g})=\mathbf{f}(m)v(\mathbf{g})+\mathbf{g}(m)v(\mathbf{f}).$
+		\citem{(a)}$v([f]+\lambda[g])=v([f])+\lambda v([g]).$
+		\citem{(b)} $v([f]\cdot[g])=[f](m)v([g])+[g](m)v([f]).$
 	\end{enumerate}
 
 	$ M_m $ denotes the set of tangent vectors to  $ M $ at  $ m $ and
 	is called the tangent space to  $ M $ at  $ m $.
 \end{definition}
-Observe that if we define  $ (v + w)(f) $ and  $ (\lambda v)(f) $ by \index{Tangent space}
+Observe that if we define  $ (v + w)([f]) $ and  $ (\lambda v)([f]) $ by \index{Tangent space}
 \begin{equation}
 	\label{eq:1.14:1}
-	\begin{aligned}(v+w)(\mathbf{f})&=v(\mathbf{f})+w(\mathbf{f})\\ (\lambda v)(\mathbf{f})&=\lambda\big(v(\mathbf{f})\big)\end{aligned}
+	\begin{aligned}(v+w)([f])&=v([f])+w([f])\\ (\lambda v)([f])&=\lambda\big(v([f])\big)\end{aligned}
 \end{equation}
 whenever $v, w \in M_m$ and $\lambda \in \mathbb{R}$, then $v + w$ and $\lambda v$ again are tangent
 vectors at $m$. So in this way $M_m$ becomes a real vector space.
@@ -680,14 +680,14 @@ to higher order tangent vectors, as we shall see in \ref{thm:1.26}.
 
 \warnernumber{15}
 \discuss{1.15}{}\label{thm:1.15}
-If $c$ is the germ of a function with the constant value $c$ on a
-neighborhood of $m$, and if $v$ is a tangent vector at $m$, then $v(c) = 0$, for
+If $[c]$ is the germ of a function with the constant value $c$ on a
+neighborhood of $m$, and if $v$ is a tangent vector at $m$, then $v([c]) = 0$, for
 \[
-	v(\mathbf{c})=c v(\mathbf{1}),
+	v([c])=c v([1]),
 \]
 and \index{Germ of a function}
 \[
-	v(\mathbf{1})=v(\mathbf{1}\cdot\mathbf{1})=1v(\mathbf{1})+1v(\mathbf{1})=2v(\mathbf{1}).
+	v([1])=v([1]\cdot[1])=1v([1])+1v([1])=2v([1]).
 \]
 \warnernumber{16}
 \begin{lemma}\label{thm:1.16}
@@ -699,13 +699,13 @@ and \index{Germ of a function}
 	vanishing on $F_m^2$ because of the derivation property.
 	Conversely, if $\ell \in (F_m/F_m^2)^*$, we define a tangent
 	vector $v_\ell$ at $m$ by setting
-	$v_\ell(\mathbf{f}) = \ell(\{\mathbf{f} - \mathbf{f}(\mathbf{m})\})$
-	for $\mathbf{f} \in \widetilde{F}_m$. (Here $\mathbf{f}(\mathbf{m})$
-	denotes the germ of the function with the constant value $\mathbf{f}(m)$,
+	$v_\ell([f]) = \ell(\{[f] - [f(m)]\})$
+	for $[f] \in \widetilde{F}_m$. (Here $[f(m)]$
+	denotes the germ of the function with the constant value $[f](m)$,
 	and $\{\ \}$ is used to denote cosets in $F_m/F_m^2$.)
 	Linearity of $v_\ell$ on $\widetilde{F}_m$ is clear. It is a derivation since
 	\[
-		\begin{aligned}{v_{\ell}(\mathbf{f}\cdot\mathbf{g})}&{{}=\ell\big(\{\mathbf{f}\cdot\mathbf{g}-\mathbf{f}(\mathbf{m})\mathbf{g}(\mathbf{m})\}\big)}\\ {}&{{}=\ell\big(\{(\mathbf{f}-\mathbf{f}(\mathbf{m}))(\mathbf{g}-\mathbf{g}(\mathbf{m}))+\mathbf{f}(\mathbf{m})\big(\mathbf{g}-\mathbf{g}(\mathbf{m})\big)}\\ {}&{{}\quad+\big(\mathbf{f}-\mathbf{f}(\mathbf{m})\big)\mathbf{g}(\mathbf{m})\}\big)}\\ {}&{{}=\ell\big(\{(\mathbf{f}-\mathbf{f}(\mathbf{m}))(\mathbf{g}-\mathbf{g}(\mathbf{m}))\}\big)+\mathbf{f}(m)\ell\big(\{\mathbf{g}-\mathbf{g}(\mathbf{m})\}\big)}\\ {}&{{}\quad+\mathbf{g}(m)\ell\big(\{\mathbf{f}-\mathbf{f}(\mathbf{m})\}\big)}\\ {}&{{}=\mathbf{f}(m)v_{\ell}(\mathbf{g})+\mathbf{g}(m)v_{\ell}(\mathbf{f}).}\\ \end{aligned}
+		\begin{aligned}{v_{\ell}([f]\cdot[g])}&{{}=\ell\big(\{[f]\cdot[g]-[f(m)][g(m)]\}\big)}\\ {}&{{}=\ell\big(\{([f]-[f(m)])([g]-[g(m)])+[f(m)]\big([g]-[g(m)]\big)}\\ {}&{{}\quad+\big([f]-[f(m)]\big)[g(m)]\}\big)}\\ {}&{{}=\ell\big(\{([f]-[f(m)])([g]-[g(m)])\}\big)+[f](m)\ell\big(\{[g]-[g(m)]\}\big)}\\ {}&{{}\quad+[g](m)\ell\big(\{[f]-[f(m)]\}\big)}\\ {}&{{}=[f](m)v_{\ell}([g])+[g](m)v_{\ell}([f]).}\\ \end{aligned}
 	\]
 	Thus we obtain mappings of $M_{m}$ into $(F_{m}/F_{m}^{2})^{*}$,
 	and vice versa. It is easily checked that these are inverses
@@ -734,19 +734,19 @@ determines an element of $F_{p}^{2}$ since the integral as a function of $q$ is 
 
 \begin{proof}[Proof of \ref{thm:1.17}]
 	Let $(U,\varphi)$ be a coordinate system about $m$ with coordinate
-	functions $x_1,\ldots,x_d$ ($d=\dim M$). Let $\mathbf{f}\in\widetilde{F}_m$. Apply \eqref{eq:1.17:1}
+	functions $x_1,\ldots,x_d$ ($d=\dim M$). Let $[f]\in\widetilde{F}_m$. Apply \eqref{eq:1.17:1}
 	to $f\circ\varphi^{-1}$, and compose with $\varphi$ to obtain
 	\[
 		f=\sum_{i=1}^{d}\frac{\partial(f\circ\varphi^{-1})}{\partial r_{i}}\bigg|_{\varphi(m)}(x_{i}-x_{i}(m))+\sum_{i,j}(x_{i}-x_{i}(m))(x_{j}-x_{j}(m))h
 	\]
 	on a neighborhood of $m$, where $h \in C^{\infty}$. Thus
 	\[
-		\mathbf{f}=\sum_{i=1}^{d}\frac{\partial(f\circ\varphi^{-1})}{\partial r_{i}}\bigg|_{\varphi(m)}\left(\mathbf{x}_{i}-\mathbf{x}_{i}(\mathbf{m})\right)\bmod F_{m}^{2}.
+		[f]=\sum_{i=1}^{d}\frac{\partial(f\circ\varphi^{-1})}{\partial r_{i}}\bigg|_{\varphi(m)}\left([x_{i}]-[x_{i}(m)]\right)\bmod F_{m}^{2}.
 	\]
-	Hence $\{\{\mathbf{x}_{i}-\mathbf{x}_{i}(\mathbf{m})\}: i=1,\ldots,d\}$ spans $F_{m}/F_{m}^{2}$. Consequently $\dim F_{m}/F_{m}^{2} \leq d$. We claim
+	Hence $\{\{[x_{i}]-[x_{i}(m)]\}: i=1,\ldots,d\}$ spans $F_{m}/F_{m}^{2}$. Consequently $\dim F_{m}/F_{m}^{2} \leq d$. We claim
 	that these elements are linearly independent. For suppose that
 	\[
-		\sum_{i=1}^{d}a_{i}(\mathbf{x}_{i}-\mathbf{x}_{i}(\mathbf{m}))\in F_{m}^{2}.
+		\sum_{i=1}^{d}a_{i}([x_{i}]-[x_{i}(m)])\in F_{m}^{2}.
 	\]
 
 	Now,
@@ -755,7 +755,7 @@ determines an element of $F_{p}^{2}$ since the integral as a function of $q$ is 
 	\]
 	Thus
 	\[
-		\sum_{i=1}^{d}a_{i}\big(\mathbf{r}_{i}-\mathbf{r}_{i}\big(\mathbf{\varphi}(\mathbf{m})\big)\big)\in F_{\varphi(m)}^{2}.
+		\sum_{i=1}^{d}a_{i}\big([r_{i}]-[r_i(\varphi(m))]\big)\in F_{\varphi(m)}^{2}.
 	\]
 	But this implies that
 	\[
@@ -774,7 +774,7 @@ In practice we will treat tangent vectors as operating on functions rather than 
 If $f$ is a differentiable function defined on a neighborhood of $m$, and $v \in M_{m}$, we define
 \begin{equation}
 	\label{eq:1.18:1}
-	v(f)=v(\mathbf{f}).
+	v(f)=v([f]).
 \end{equation}
 
 Thus  $ v(f) = v(g) $ whenever f and g agree on a neighborhood of m, and clearly
@@ -807,7 +807,7 @@ where  $ f + \lambda g $ and  $ f \cdot g $ are defined on the intersection of t
 \warnernumber{20}
 \begin{remarks}{on 1.19}\label{thm:1.20}
 	\begin{enumerate}
-		\item[(a)] Clearly  $  ((\partial/\partial x_i)_m)(f)  $ depends only on the germ of  $  f  $ at  $  m  $, and (a) and (b) of 1.14 are satisfied; so  $  (\partial/\partial x_i)_m  $ is a tangent vector at  $  m  $. Moreover,  $  \{(\partial/\partial x_i)_m : i = 1, \ldots, d\}  $ is a basis of  $  M_m  $. Indeed, it is the basis of  $  M_m  $ dual to the basis  $  \{(\mathbf{x}_i - \mathbf{x}_1(\mathbf{m})) : i = 1, \ldots, d\}  $ of  $  F_m/F_m^2  $ since
+		\item[(a)] Clearly  $  ((\partial/\partial x_i)_m)(f)  $ depends only on the germ of  $  f  $ at  $  m  $, and (a) and (b) of 1.14 are satisfied; so  $  (\partial/\partial x_i)_m  $ is a tangent vector at  $  m  $. Moreover,  $  \{(\partial/\partial x_i)_m : i = 1, \ldots, d\}  $ is a basis of  $  M_m  $. Indeed, it is the basis of  $  M_m  $ dual to the basis  $  \{([x_i] - [x_i(m)]) : i = 1, \ldots, d\}  $ of  $  F_m/F_m^2  $ since
 		      \[
 			      \frac{\partial}{\partial x_{i}}\bigg|_{m}(x_{j}-x_{j}(m))=\delta_{ij}.
 		      \]
@@ -1040,11 +1040,11 @@ It is useful to look at $M_{m}$ as $(F_{m}/F_{m}^{2})^{*}$, for this point of vi
 
 Recall that $\tilde{F}_{m}$ is the algebra of germs of functions at $m$. $F_{m} \subset \tilde{F}_{m}$ is the ideal of germs vanishing at $m$, and $F_{m}^{k}$ ($k$ an integer $\geq 1$) is the ideal of $\tilde{F}_{m}$ consisting of all finite linear combinations of $k$-fold products of elements of $F_{m}$.
 
-The vector space $F_m/F_m^{k+1}$ is called the space of $k$th order differentials at $m$, and we denote it by ${}^kM_m$. As before, $f$ denotes the germ of $f$ at $m$, and \{\} will denote cosets in $F_m/F_m^{k+1}$. Let $f$ be a differentiable function on a neighborhood of $m$. We define the $k$th order differential $d^k f$ of $f$ at $m$ by
+The vector space $F_m/F_m^{k+1}$ is called the space of $k$th order differentials at $m$, and we denote it by ${}^kM_m$. As before, $[f]$ denotes the germ of $f$ at $m$, and \{\} will denote cosets in $F_m/F_m^{k+1}$. Let $f$ be a differentiable function on a neighborhood of $m$. We define the $k$th order differential $d^k f$ of $f$ at $m$ by
 
 \begin{equation}
 	\label{eq:1.26:1}
-	d^{k}f=\{\mathbf{f}-\mathbf{f}(\mathbf{m})\}.
+	d^{k}f=\{[f]-[f(m)]\}.
 \end{equation}
 
 A $k$th order tangent vector at $m$ is a real linear function on $\tilde{F}_{m}$ vanishing on $F_{m}^{k+1}$ and vanishing also on the set of germs of functions constant on a neighborhood of m. The real linear space of kth order tangent vectors at m will be denoted by  $ M_{m}^{k} $. We have a natural identification of  $ M_{m}^{k} $ with  $ ({}^kM_{m})^{*} $ since any kth order tangent vector restricted to  $ F_{m} $ yields a linear function on  $ F_{m} $ vanishing on  $ F_{m}^{k+1} $, and hence yields an element of  $ ({}^kM_{m})^{*} $; and conversely an element of  $ ({}^kM_{m})^{*} $ uniquely determines a linear function on  $ F_{m} $ vanishing on  $ F_{m}^{k+1} $, and this extends uniquely to a kth order tangent vector by requiring it to annihilate germs of constant functions.
@@ -1074,21 +1074,22 @@ Hence
 
 \begin{equation}
 	\tag{4}\label{eq:1.26:4}
-	d^{k}f=\sum_{1\leq[\alpha]\leq k}a_{\alpha}\{\left(\mathbf{x}-\mathbf{x}(\mathbf{m})\right)^{\alpha}\}.
+	d^{k}f=\sum_{1\leq[\alpha]\leq k}a_{\alpha}\{\left([x]-[x(m)]\right)^{\alpha}\}.
 \end{equation}
 
+Here $[x]=([x_1],\ldots,[x_d])$ and $[x(m)]=([x_1(m)],\ldots,[x_d(m)])$, with products interpreted componentwise as in (1).
 Thus the collection
 
 \begin{equation}
 	\tag{5}\label{eq:1.26:5}
-	[\{(x-\mathbf{x}(\mathbf{m}))^{a}\}\colon1\leq[\alpha]\leq k]
+	\big\{\{([x]-[x(m)])^{\alpha}\}\colon1\leq[\alpha]\leq k\big\}
 \end{equation}
 
 spans  $ ^{k}M_{m} $. The proof that these elements are linearly independent in  $ ^{k}M_{m} $ is the obvious generalization of the proof for the case k = 2 which was treated in 1.17. Thus the collection (5) forms a basis of  $ ^{k}M_{m} $. Consequently  $ ^{k}M_{m} $ is finite dimensional with dimension equal to the binomial coefficient  $ \sum_{j=1}^{k}\binom{d+j-1}{j} $. As the dual space of  $ ^{k}M_{m} $,  $ M_{m}^{k} $ is also finite dimensional with the same dimension. Since  $ M_{m}^{k} $ is identified with  $ (^{k}M_{m})^{*} $, and these spaces are finite dimensional, we have a canonical isomorphism of  $ ^{k}M_{m} $ with  $ (M_{m}^{k})^{*} $, under which the element $d^{k}f \in {}^{k}M_{m}$, considered as an element of  $ (M_{m}^{k})^{*} $, satisfies
 
 \begin{equation}
 	\tag{6}\label{eq:1.26:6}
-	d^{k}f(v)=v(\mathbf{f}).
+	d^{k}f(v)=v([f]).
 \end{equation}
 
 Let
@@ -1130,7 +1131,7 @@ As in the case of first order tangent vectors, we customarily think of tangent v
 
 \begin{equation}
 	\tag{12}\label{eq:1.26:12}
-	v(f)=v(\mathbf{f})
+	v(f)=v([f])
 \end{equation}
 
 whenever $f$ is $C^{\infty}$ on a neighborhood of $m$ and $v$ is a tangent vector of any order at $m$.

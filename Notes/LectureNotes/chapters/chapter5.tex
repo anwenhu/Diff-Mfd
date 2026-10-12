@@ -60,10 +60,10 @@ A less trivial example is the following. Let $\bar{F}_{m}$ denote the set of ger
 When it will introduce no confusion, we shall denote $\mathcal{C}^{\infty}(M)$ simply by $\mathcal{C}^{\infty}$. We define the projection $\pi\colon \mathcal{C}^{\infty} \to M$ in the obvious fashion so that $f \in \bar{F}_{\pi(f)}$. Associate with each open set $U$ in $M$ and each $C^{\infty}$ function $f$ on $U$ the set
 
 \[
-\bigcup_{m\in U}f_{m}\subset\mathcal{C}^{\infty},
+\{[f]_m:m\in U\}\subset\mathcal{C}^{\infty},
 \]
 
-where  $ f_m $ is the germ of  $ f $ at  $ m $. The collection of these sets forms a basis for a topology on  $ \mathcal{C}^\infty $ which makes  $ \mathcal{C}^\infty $ into a sheaf of real vector spaces (in fact, a sheaf of algebras since each  $ \bar{F}_m $ has an algebra structure).  $ \mathcal{C}^\infty(M) $ is called the sheaf of germs of  $ C^\infty $ functions on  $ M $. Similarly, one constructs the sheaf  $ \mathcal{C}^p(M) $ of germs of functions of class  $ C^p $ on  $ M $ for each integer  $ p \geq 0 $. \index{Sheaf}
+where  $ [f]_m $ is the germ of  $ f $ at  $ m $. The collection of these sets forms a basis for a topology on  $ \mathcal{C}^\infty $ which makes  $ \mathcal{C}^\infty $ into a sheaf of real vector spaces (in fact, a sheaf of algebras since each  $ \bar{F}_m $ has an algebra structure).  $ \mathcal{C}^\infty(M) $ is called the sheaf of germs of  $ C^\infty $ functions on  $ M $. Similarly, one constructs the sheaf  $ \mathcal{C}^p(M) $ of germs of functions of class  $ C^p $ on  $ M $ for each integer  $ p \geq 0 $. \index{Sheaf}
 
 \end{examples}
 
@@ -2698,7 +2698,7 @@ is an algebra isomorphism.
 
 \item Prove that the tensor product of two complete presheaves need not be a complete presheaf.
 
-\item Let $\varphi$ be a $C^{\infty}$ function on $M$. Define a mapping $\mathcal{C}^{\infty}(M) \to \mathcal{C}^{\infty}(M)$ by sending $\mathbf{f}_{m} \to \varphi(m) \cdot \mathbf{f}_{m}$. Here, as usual, $\mathbf{f}_{m}$ denotes the germ at $m$ of a $C^{\infty}$ function $f$ defined on a neighborhood of $m$. Prove that this mapping is not in general continuous and therefore cannot be a sheaf homomorphism. (Caution: Errors are often made at this point in the construction of partitions of unity on sheaves—review the correct procedure for the construction of a partition of unity on $\mathcal{C}^{\infty}(M)$ given in 5.10.)
+\item Let $\varphi$ be a $C^{\infty}$ function on $M$. Define a mapping $\mathcal{C}^{\infty}(M) \to \mathcal{C}^{\infty}(M)$ by sending $[f]_{m} \to \varphi(m) \cdot [f]_{m}$. Here, as usual, $[f]_{m}$ denotes the germ at $m$ of a $C^{\infty}$ function $f$ defined on a neighborhood of $m$. Prove that this mapping is not in general continuous and therefore cannot be a sheaf homomorphism. (Caution: Errors are often made at this point in the construction of partitions of unity on sheaves—review the correct procedure for the construction of a partition of unity on $\mathcal{C}^{\infty}(M)$ given in 5.10.)
 
 \item Make the necessary modifications in the proof of \hyperref[thm:5.12]{Theorem 5.12} to prove that if $\Phi$ is a system of supports on $M$ and $\mathcal{S}\to\mathcal{T}$ is a surjective sheaf homomorphism with its kernel a fine sheaf, then $\Gamma_{\Phi}(\mathcal{S})\to\Gamma_{\Phi}(\mathcal{T})$ is a surjection.
 
