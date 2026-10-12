@@ -640,7 +640,7 @@ local nature of functions, we introduce the notion of germs of functions.
 If $f$ is a $C^\infty$ function on a neighborhood of $m$, then $[f]_m$ will denote its germ at $m$. When the base point is clear, we write $[f]$ for $[f]_m$.
 The operations of addition, scalar multiplication, and multiplication of
 functions induce on $\widetilde{F}_m$ the structure of an algebra over $\mathbb{R}$.
-A germ $[f]$ has a well-defined value $[f](m)=f(m)$ at $m$, namely, the value
+A germ $[f]$ has a well-defined value $f(m)$ at $m$, namely, the value
 at $m$ of any representative of the germ. Let $F_m \subset \widetilde{F}_m$
 be the set of germs which vanish at $m$. Then $F_m$ is an ideal in $\widetilde{F}_m$,
 and we let $F_m^k$ denote its $k$th power. $F_m^k$ is the ideal of $\widetilde{F}_m$
@@ -655,7 +655,7 @@ $\widetilde{F}_m \supset F_m \supset F_m^{2} \supset F_m^{3} \supset \cdots$.
 	$ [g] \in \widetilde{F}_m $ and  $ \lambda \in \mathbb{R} $, \index{Tangent vector}
 	\begin{enumerate}
 		\citem{(a)}$v([f]+\lambda[g])=v([f])+\lambda v([g]).$
-		\citem{(b)} $v([f]\cdot[g])=[f](m)v([g])+[g](m)v([f]).$
+		\citem{(b)} $v([f]\cdot[g])=f(m)v([g])+g(m)v([f]).$
 	\end{enumerate}
 
 	$ M_m $ denotes the set of tangent vectors to  $ M $ at  $ m $ and
@@ -701,11 +701,11 @@ and \index{Germ of a function}
 	vector $v_\ell$ at $m$ by setting
 	$v_\ell([f]) = \ell(\{[f] - [f(m)]\})$
 	for $[f] \in \widetilde{F}_m$. (Here $[f(m)]$
-	denotes the germ of the function with the constant value $[f](m)$,
+	denotes the germ of the function with the constant value $f(m)$,
 	and $\{\ \}$ is used to denote cosets in $F_m/F_m^2$.)
 	Linearity of $v_\ell$ on $\widetilde{F}_m$ is clear. It is a derivation since
 	\[
-		\begin{aligned}{v_{\ell}([f]\cdot[g])}&{{}=\ell\big(\{[f]\cdot[g]-[f(m)][g(m)]\}\big)}\\ {}&{{}=\ell\big(\{([f]-[f(m)])([g]-[g(m)])+[f(m)]\big([g]-[g(m)]\big)}\\ {}&{{}\quad+\big([f]-[f(m)]\big)[g(m)]\}\big)}\\ {}&{{}=\ell\big(\{([f]-[f(m)])([g]-[g(m)])\}\big)+[f](m)\ell\big(\{[g]-[g(m)]\}\big)}\\ {}&{{}\quad+[g](m)\ell\big(\{[f]-[f(m)]\}\big)}\\ {}&{{}=[f](m)v_{\ell}([g])+[g](m)v_{\ell}([f]).}\\ \end{aligned}
+		\begin{aligned}{v_{\ell}([f]\cdot[g])}&{{}=\ell\big(\{[f]\cdot[g]-[f(m)][g(m)]\}\big)}\\ {}&{{}=\ell\big(\{([f]-[f(m)])([g]-[g(m)])+[f(m)]\big([g]-[g(m)]\big)}\\ {}&{{}\quad+\big([f]-[f(m)]\big)[g(m)]\}\big)}\\ {}&{{}=\ell\big(\{([f]-[f(m)])([g]-[g(m)])\}\big)+f(m)\ell\big(\{[g]-[g(m)]\}\big)}\\ {}&{{}\quad+g(m)\ell\big(\{[f]-[f(m)]\}\big)}\\ {}&{{}=f(m)v_{\ell}([g])+g(m)v_{\ell}([f]).}\\ \end{aligned}
 	\]
 	Thus we obtain mappings of $M_{m}$ into $(F_{m}/F_{m}^{2})^{*}$,
 	and vice versa. It is easily checked that these are inverses

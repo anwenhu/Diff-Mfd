@@ -95,7 +95,7 @@
     "item": "1.13"
   },
   {
-    "symbol": "$[f]_m, [f], [f](m)=f(m)$",
+    "symbol": "$[f]_m, [f], f(m)$",
     "meaning": "Germ of a function and its value",
     "item": "1.13"
   },

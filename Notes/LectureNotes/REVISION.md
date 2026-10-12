@@ -5,7 +5,7 @@
 - Replaced bold function germs by `$[f]_m$`, abbreviated to `$[f]$` when
   the base point is clear, in Chapter 1 and the function-sheaf example and
   exercise in Chapter 5. Vector typography is unchanged.
-- Distinguished the scalar value `$[f](m)=f(m)$` from the constant-function
+- Distinguished the scalar value `$f(m)$` from the constant-function
   germ `$[f(m)]$`; retained braces for cosets in powers of the vanishing ideal.
   Explained the coordinate tuple shorthand in 1.26 and regenerated the
   notation index from `notation.json`.
