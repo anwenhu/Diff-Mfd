@@ -95,7 +95,7 @@
     "item": "1.13"
   },
   {
-    "symbol": "$\\mathbf{f}, \\mathbf{f}(m)$",
+    "symbol": "$[f]_m, [f], f(m)$",
     "meaning": "Germ of a function and its value",
     "item": "1.13"
   },
@@ -105,7 +105,7 @@
     "item": "1.14"
   },
   {
-    "symbol": "$\\mathbf f-\\mathbf f(m)$",
+    "symbol": "$[f]-[f(m)]$",
     "meaning": "Vanishing part of a germ",
     "item": "1.15"
   },
