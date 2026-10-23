@@ -1,0 +1,300 @@
+\documentclass[10pt]{beamer}
+\usetheme{metropolis}
+
+\usepackage{amsmath,amssymb}
+\usepackage{mathtools}
+\usepackage{xeCJK}
+\setCJKmainfont{Noto Serif SC}
+\usepackage{tikz-cd}
+
+% 1. 开启标题背景色填充
+\metroset{block=fill}
+
+% theorem environments
+\newtheorem{proposition}{Proposition}
+\newtheorem{exercise}{Exercise}
+
+% notation
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\supp}{\operatorname{supp}}
+
+\title{Submanifolds}
+\subtitle{Normal Forms, Immersions, Submersions \& Regular Submanifolds}
+\date{October 18, 2026}
+\author{LXJ}
+
+\begin{document}
+
+\maketitle
+
+%====================================================================
+\section{Normal Form of an Immersion}
+
+\begin{frame}{Immersions have a local standard form}
+	\begin{theorem}[Normal form of an immersion]
+		Let $f : M^{m} \longrightarrow N^{n}$ be an immersion. For every
+		$p \in M$, there exists a local coordinate system $(U, \varphi)$
+		about $p$ and a local coordinate system $(V, \psi)$ about
+		$q = f(p)$, s.t.\ the local form of $f$
+		\[
+			\psi \circ f \circ \varphi^{-1} : \varphi(U) \longrightarrow \psi(V)
+		\]
+		is a \emph{standard embedding}, i.e.
+		\[
+			\psi \circ f \circ \varphi^{-1}(x^{1}, x^{2}, \dots, x^{m})
+			= (x^{1}, x^{2}, \dots, x^{m}, 0, \dots, 0).
+		\]
+	\end{theorem}
+	\begin{block}{Idea}
+		An immersion looks, near each point, like the inclusion of a
+		coordinate subspace $\R^{m} \hookrightarrow \R^{n}$.
+	\end{block}
+\end{frame}
+
+\begin{frame}{Immersions are locally embeddings}
+	\begin{corollary}
+		An immersion map $f : M \longrightarrow N$ is an embedding
+		\emph{locally}: around every point $p \in M$, there is a
+		neighborhood $U \subset M$ such that $f\big|_{U} : U \to f(U)$
+		is a homeomorphism onto its image.
+	\end{corollary}
+	\medskip
+	\begin{block}{Remark}
+		Globally an immersion need \emph{not} be an embedding --- the
+		image may cross itself (e.g.\ the figure-eight curve). The local
+		normal form only controls a small neighborhood of each point.
+	\end{block}
+\end{frame}
+
+%====================================================================
+\section{Normal Form of a Submersion}
+
+\begin{frame}{Submersions have a local standard form}
+	\begin{theorem}[Normal form of a submersion]
+		Let $f : M^{m} \longrightarrow N^{n}$ be a submersion ($m \geq n$).
+		Then $\forall p \in M$, there is a local coordinate system
+		$(U, \varphi)$ of $p$ and $(V, \psi)$ of $q = f(p)$, s.t.\ the
+		local form
+		\[
+			\psi \circ f \circ \varphi^{-1} : \varphi(U) \longrightarrow \psi(V)
+		\]
+		is a \emph{standard submersion}, i.e.
+		\[
+			\psi \circ f \circ \varphi^{-1}(x_{1}, \dots, x_{m})
+			= (x_{1}, \dots, x_{n}).
+		\]
+	\end{theorem}
+	\begin{block}{Idea}
+		A submersion looks, near each point, like the projection
+		$\R^{m} \twoheadrightarrow \R^{n}$ onto the first $n$ coordinates.
+	\end{block}
+\end{frame}
+
+\begin{frame}{Submersions are open maps}
+	\begin{corollary}
+		A submersion $f : M \longrightarrow N$ is an \emph{open map},
+		i.e.\ it maps open sets to open sets.
+	\end{corollary}
+	\begin{proof}
+		Let $W \subset M$ be open and $p \in W$. In the normal-form
+		coordinates above, $f$ is a coordinate projection, which is open
+		on $\varphi(U \cap W)$; hence $f(U \cap W)$ is a neighborhood of
+		$f(p)$ contained in $f(W)$. Since $p \in W$ is arbitrary, $f(W)$
+		is open.
+	\end{proof}
+	\medskip
+	\begin{block}{Remark}
+		In particular, a \emph{surjective} submersion $f : M \to N$ is a
+		quotient map: $V \subset N$ is open iff $f^{-1}(V) \subset M$ is
+		open.
+	\end{block}
+\end{frame}
+
+%====================================================================
+\section{Submanifolds}
+
+\begin{frame}{Two notions of submanifolds}
+	\begin{definition}[Submanifolds]
+		Let $M, N$ be $C^{\infty}$-manifolds with $M \subset N$ as a set.
+		If the inclusion map $i : M \hookrightarrow N$ is an immersion,
+		then $M$ is an \emph{immersion submanifold} (or submfd). If
+		$i : M \hookrightarrow N$ is an embedding (i.e.\ $M \subset N$
+		as a topological subspace), then $M$ is called a
+		\emph{regular submanifold}.
+	\end{definition}
+	\medskip
+	\begin{lemma}
+		Let $M$ and $N$ be $C^{\infty}$-manifolds. If $f : M
+			\longrightarrow N$ is a one-to-one immersion, then $f(M) \subset N$
+		is an immersion submanifold (with the topological structure
+		inherited from $M$). If $f : M \longrightarrow N$ is an embedding,
+		then $f(M) \subset N$ is a regular submanifold.
+	\end{lemma}
+\end{frame}
+
+\begin{frame}{Immersion submanifold vs.\ regular submanifold}
+	\begin{block}{Terminology (following the lemma)}
+		When $f : M \longrightarrow N$ is a one-to-one immersion, we call
+		$M$ (or its image) an \emph{immersion submanifold}. If $f$ is an
+		embedding, we call $M$ a \emph{regular submanifold}.
+	\end{block}
+	\medskip
+	\begin{alertblock}{Key distinction}
+		\begin{itemize}
+			\item \textbf{Immersion submanifold:} the topology on $M$ may
+			      be \emph{finer} than the subspace topology inherited from
+			      $N$; ``short'' pieces of $M$ may be far apart in $N$.
+			\item \textbf{Regular submanifold:} $M$ carries exactly the
+			      subspace topology; locally $M$ looks like a
+			      \emph{slice} of $N$ --- see the structure theorem below.
+		\end{itemize}
+	\end{alertblock}
+\end{frame}
+
+%====================================================================
+\section{The Structure of Regular Submanifolds}
+
+\begin{frame}{Regular submanifolds are locally slices}
+	\begin{theorem}[The structure of regular submanifolds]
+		$M$ is a regular submanifold of $N$ $\Longleftrightarrow$ $M$ is
+		a sub-topological space of $N$, and $\forall p \in M$, there is a
+		local coordinate system $(U, x_{1}, \dots, x_{n})$ of $p$ in $N$,
+		s.t.
+		\[
+			M \cap U
+			= \bigl\{ q \in U \bigm|
+			x_{i}(q) = 0,\ m+1 \leq i \leq n \bigr\}.
+		\]
+	\end{theorem}
+	\begin{block}{Remark}
+		$\{ x_{i} \}_{m+1 \leq i \leq n}$ are called \emph{slice
+			coordinates}: locally $M$ is cut out by setting the last
+		$n - m$ coordinates to zero, and $(x_{1}, \dots, x_{m})\big|_{M}$
+		give a chart of $M$.
+	\end{block}
+\end{frame}
+
+\begin{frame}{The constant rank theorem}
+	\begin{theorem}[Constant rank map]
+		Let $f : M^{m} \longrightarrow N^{n}$ be a $C^{\infty}$ map with
+		\[
+			\operatorname{rank}_{p} f \equiv \mathrm{const} = l
+			\qquad (\forall p \in M).
+		\]
+		Then $\forall q \in N$, the level set
+		\[
+			f^{-1}(q) = \{ p \in M \mid f(p) = q \}
+		\]
+		is either $\varnothing$, or a regular submanifold of $M$ of
+		dimension $(m - l)$.
+	\end{theorem}
+	\medskip
+	\begin{block}{Special cases}
+		\begin{itemize}
+			\item $l = n$ (submersion): $f^{-1}(q)$ is a regular
+			      submanifold of dimension $m - n$ --- the preimage
+			      theorem.
+			\item $l = m$ (immersion, $m \leq n$): $f^{-1}(q)$ is a
+			      $0$-dimensional submanifold (discrete points).
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+%====================================================================
+\section{Proof of the Structure Theorem}
+
+\begin{frame}{Setup of the proof ($\Rightarrow$)}
+	Let $M$ be a regular submanifold of $N$. The inclusion map
+	\[
+		i : M \longrightarrow N
+	\]
+	is an embedding, where $M$ is endowed with the subspace topology.
+	The differential
+	\[
+		i_{*, p} : T_{p} M \longrightarrow T_{p} N
+	\]
+	has $\operatorname{rank} i_{*, p} = m$ ($m = \dim M$). Let $p \in M$;
+	take two local coordinate systems about $p$:
+	\[
+		(U, \varphi = (x_{1}, \dots, x_{m})) \text{ on } M,
+		\qquad
+		(V, \psi = (y_{1}, \dots, y_{n})) \text{ on } N.
+	\]
+\end{frame}
+
+\begin{frame}{Full rank of the Jacobian}
+	Then the Jacobian
+	\[
+		\left.
+		\frac{\partial \bigl( y_{i} \circ \varphi^{-1} \bigr)}
+		{\partial x_{j}}
+		\right|_{\substack{1 \leq i \leq n \\ 1 \leq j \leq m}}
+		\bigl( \varphi(p) \bigr)
+		\quad \text{has full rank } m.
+	\]
+	WLOG (relabeling the $y_{i}$'s), we assume the $m \times m$
+	submatrix
+	\[
+		\left.
+		\frac{\partial \bigl( y_{i} \circ \varphi^{-1} \bigr)}
+		{\partial x_{j}}
+		\right|_{\substack{1 \leq i \leq m \\ 1 \leq j \leq m}}
+		\bigl( \varphi(p) \bigr)
+		\quad \text{is non-singular.}
+	\]
+\end{frame}
+
+\begin{frame}{Extending to a local diffeomorphism}
+	Consider the new map $\Phi : \varphi(U) \times \R^{n-m}
+		\longrightarrow \psi(V)$,
+	\begin{align*}
+		 & (x_{1}, \dots, x_{m}; x_{m+1}, \dots, x_{n}) \\
+		 & \qquad \longmapsto
+		\bigl(
+		y_{1} \circ \varphi^{-1},\, \dots,\, y_{m} \circ \varphi^{-1},\
+		y_{m+1} \circ \varphi^{-1} + x_{m+1},\, \dots,\,
+		y_{n} \circ \varphi^{-1} + x_{n}
+		\bigr).
+	\end{align*}
+	Then
+	\[
+		D \Phi \Big|_{(\varphi(p),\, 0)}
+		=
+		\begin{pmatrix}
+			\left( \dfrac{\partial \, y_{i} \circ \varphi^{-1}}
+			{\partial x_{j}} \right)_{\! m \times m} & 0               \\[8pt]
+			*                                                   & I_{\, n-m}
+		\end{pmatrix}
+	\]
+	is non-singular, so $\Phi$ is a \emph{local diffeomorphism} about
+	$(\varphi(p), 0)$.
+\end{frame}
+
+\begin{frame}{Conclusion of the proof}
+	Consider
+	\[
+		\Phi^{-1} \circ \psi \circ i \circ \varphi^{-1}
+		(x_{1}, \dots, x_{m})
+		= (x_{1}, \dots, x_{m},\, 0, \dots, 0).
+	\]
+	Indeed, by the definition of $\Phi$, on the slice
+	$(x_{m+1}, \dots, x_{n}) = (0, \dots, 0)$ we have
+	$\Phi \circ (\psi \circ i \circ \varphi^{-1}) (x_{1}, \dots, x_{m})
+		= (x_{1}, \dots, x_{m}, 0, \dots, 0)$.
+	Hence the new coordinates on $N$
+	\[
+		\widetilde{x}_{i} \triangleq (\Phi^{-1} \circ \psi)_{i},
+		\qquad i = 1, \dots, n,
+	\]
+	satisfy
+	\[
+		M \cap U
+		= \bigl\{ q \in U \bigm|
+		\widetilde{x}_{i}(q) = 0,\ m+1 \leq i \leq n \bigr\}.
+		\qed
+	\]
+\end{frame}
+
+\end{document}
